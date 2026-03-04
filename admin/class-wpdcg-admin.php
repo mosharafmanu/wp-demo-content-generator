@@ -32,6 +32,23 @@ class WPDCG_Admin {
 		add_action( 'admin_menu',                array( $this, 'register_menu' ) );
 		add_action( 'admin_post_wpdcg_generate', array( $this, 'handle_generate' ) );
 		add_action( 'admin_post_wpdcg_delete',   array( $this, 'handle_delete' ) );
+		add_filter( 'plugin_action_links_' . WPDCG_BASENAME, array( $this, 'add_action_links' ) );
+	}
+
+	/**
+	 * Adds a "Demo Content" link to the plugin row on the Plugins page.
+	 *
+	 * @param string[] $links Existing action links.
+	 * @return string[]
+	 */
+	public function add_action_links( array $links ): array {
+		$settings_link = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( $this->page_url() ),
+			esc_html__( 'Demo Content', 'wp-demo-content-generator' )
+		);
+		array_unshift( $links, $settings_link );
+		return $links;
 	}
 
 	/**
