@@ -1,6 +1,6 @@
 # WP Demo Content Generator
 
-> A lightweight WordPress plugin to generate rich demo content — posts, pages, and custom post types — and safely delete only what was generated.
+A lightweight WordPress plugin to quickly fill a site with demo posts, pages, and custom post types — and cleanly remove them when you are done.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759b?logo=wordpress)
@@ -9,21 +9,21 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- 📝 **Any post type** — generate demo content for posts, pages, or any registered custom post type
-- 🖼️ **Auto-generated featured images** — unique coloured gradient images created via PHP GD, saved directly to the media library
-- 📄 **Rich HTML content** — structured articles with `h2`, `h3`, `p`, `ul`, `ol`, `blockquote`, and inline `a` links
-- ✍️ **Excerpt support** — optionally generate and set a post excerpt with a configurable word limit
-- 🏷️ **Taxonomy & term assignment** — assign existing terms to generated posts for any detected taxonomy
-- 👤 **Author selection** — choose any registered user as the post author
-- 📊 **Status control** — generate as Published, Draft, or Pending Review
-- 🗑️ **Safe deletion** — removes only what the plugin created; real site content is never touched
-- 🔒 **Security-first** — nonce verification, capability checks, and fully escaped output throughout
+- Supports any public post type — posts, pages, or custom post types registered by your theme or other plugins
+- Generates a unique gradient featured image for each post using PHP GD and saves it to the media library
+- Builds structured HTML content with headings, paragraphs, lists, blockquotes, and inline links — not just plain lorem ipsum
+- Optionally creates a post excerpt with a configurable word limit
+- Lets you assign existing taxonomy terms to every generated post
+- Choose any registered WordPress user as the author
+- Set the post status to Published, Draft, or Pending Review
+- Tracks everything it creates so deletion only ever touches plugin-generated content — your real content is safe
+- Follows WordPress coding standards with nonce verification, capability checks, and escaped output
 
 ---
 
-## 🔧 Requirements
+## Requirements
 
 | Requirement | Minimum |
 |---|---|
@@ -33,80 +33,76 @@
 
 ---
 
-## 📦 Installation
+## Installation
 
-1. Download or clone this repository into your `wp-content/plugins/` directory:
+1. Clone or download this repository into your `wp-content/plugins/` directory:
    ```bash
    git clone https://github.com/mosharafmanu/wp-demo-content-generator.git
    ```
-2. Log in to your WordPress admin panel.
+2. Log in to your WordPress admin.
 3. Go to **Plugins → Installed Plugins**.
 4. Find **WP Demo Content Generator** and click **Activate**.
 
 ---
 
-## 🚀 Usage
+## Usage
 
-Navigate to **Tools → Demo Content** in the WordPress admin menu.
+Go to **Tools → Demo Content** in the WordPress admin menu.
 
-### Generate Content
+### Generating content
 
 | Field | Description |
 |---|---|
-| **Post Type** | Select any public post type (post, page, or custom) |
-| **Count** | Number of items to generate (1–500) |
-| **Post Status** | Published / Draft / Pending Review |
-| **Author** | Assign a registered WordPress user |
-| **Paragraphs** | Content depth per post (1–8) |
-| **Featured Image** | Auto-generate a unique gradient image via PHP GD |
-| **Excerpt** | Optionally generate an excerpt with a custom word limit |
-| **Assign Terms** | Assign existing taxonomy terms to each generated post |
+| Post Type | Any public post type registered on the site |
+| Count | How many items to create (1–500) |
+| Post Status | Published, Draft, or Pending Review |
+| Author | Any registered WordPress user |
+| Paragraphs | Controls content depth per post (1–8) |
+| Featured Image | Generates a unique gradient image and sets it as the featured image |
+| Excerpt | Optionally adds an excerpt with a custom word limit |
+| Assign Terms | Attaches existing taxonomy terms to each generated post |
 
-Click **Generate Demo Content** — the plugin tracks everything it creates.
+Hit **Generate Demo Content** and the plugin logs every item it creates.
 
-### Delete Content
+### Deleting content
 
-When generated content exists, a **Delete Demo Content** section appears. Confirm the irreversible action and click **Delete All Demo Content**. Only plugin-generated content is removed.
+Once generated content exists, a delete section appears at the bottom of the page. Tick the confirmation checkbox and click **Delete All Demo Content**. Only items created by this plugin are removed.
 
 ---
 
-## 📄 Generated Content Structure
+## Content structure
 
-Each post body is built dynamically and varies per generation run:
+Each generated post is built as a proper article, not a wall of lorem ipsum. The structure varies per run and scales with the Paragraphs setting:
 
 ```
 Intro paragraph
-└── h2 + paragraph + ul / ol / blockquote  (alternating)
-└── h2 + paragraph
-└── h3 + paragraph + blockquote
-└── Closing paragraph with inline <a> link
+h2 + paragraph + list or blockquote
+h2 + paragraph
+h3 + paragraph + blockquote
+Closing paragraph with an inline link
 ```
-
-Content scales in depth with the **Paragraphs** setting.
 
 ---
 
-## 📋 Changelog
+## Changelog
 
 ### 1.0.0
 - Initial release
-- Post / page / CPT generation with full options
+- Support for posts, pages, and custom post types
 - PHP GD featured image generation
-- Rich HTML content blocks (headings, lists, blockquotes, links)
+- Rich HTML content with headings, lists, blockquotes, and links
 - Taxonomy term assignment
 - Safe tracked deletion
 
 ---
 
-## 📜 License
+## License
 
-Licensed under the [GNU General Public License v2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html).
+[GNU General Public License v2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ---
 
-## 👤 Author
+## Author
 
-**Mosharaf Hossain**
-🌐 [mosharafmanu.com](https://mosharafmanu.com/)
-🐙 [github.com/mosharafmanu](https://github.com/mosharafmanu)
+**Mosharaf Hossain** — [mosharafmanu.com](https://mosharafmanu.com/)
 
